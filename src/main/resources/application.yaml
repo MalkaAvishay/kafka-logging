@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /kafka
+spring:
+  application:
+    name: kafka-logging
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: example-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+app.kafka:
+  topic: example-topic
